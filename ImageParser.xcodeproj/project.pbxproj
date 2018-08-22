@@ -12,6 +12,15 @@
 		3F7B8C5E1F5D7FE8009BF2D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F7B8C5D1F5D7FE8009BF2D3 /* Assets.xcassets */; };
 		3F7B8C611F5D7FE8009BF2D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F7B8C5F1F5D7FE8009BF2D3 /* Main.storyboard */; };
 		3F7B8C691F5D885F009BF2D3 /* Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7B8C681F5D885F009BF2D3 /* Files.swift */; };
+		448FCE82212D7207008D1D23 /* FilesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448FCE81212D7207008D1D23 /* FilesWorker.swift */; };
+		448FCE84212D74AF008D1D23 /* FileNamesFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448FCE83212D74AF008D1D23 /* FileNamesFormatter.swift */; };
+		448FCE86212D768E008D1D23 /* AppTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448FCE85212D768E008D1D23 /* AppTexts.swift */; };
+		448FCE8A212D774A008D1D23 /* ParsingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448FCE89212D774A008D1D23 /* ParsingStatus.swift */; };
+		44AB849A212D85590057520B /* BundleMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AB8499212D85590057520B /* BundleMode.swift */; };
+		44AB849D212D87B30057520B /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 44AB849B212D87B30057520B /* LICENSE */; };
+		44AB849E212D87B30057520B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 44AB849C212D87B30057520B /* README.md */; };
+		44AB84A0212D882C0057520B /* BaseFileNamesFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AB849F212D882C0057520B /* BaseFileNamesFormatter.swift */; };
+		44AB84A2212D88520057520B /* MultiBundleFileNamesFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AB84A1212D88520057520B /* MultiBundleFileNamesFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +31,15 @@
 		3F7B8C601F5D7FE8009BF2D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3F7B8C621F5D7FE8009BF2D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F7B8C681F5D885F009BF2D3 /* Files.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Files.swift; sourceTree = "<group>"; };
+		448FCE81212D7207008D1D23 /* FilesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesWorker.swift; sourceTree = "<group>"; };
+		448FCE83212D74AF008D1D23 /* FileNamesFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileNamesFormatter.swift; sourceTree = "<group>"; };
+		448FCE85212D768E008D1D23 /* AppTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTexts.swift; sourceTree = "<group>"; };
+		448FCE89212D774A008D1D23 /* ParsingStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsingStatus.swift; sourceTree = "<group>"; };
+		44AB8499212D85590057520B /* BundleMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleMode.swift; sourceTree = "<group>"; };
+		44AB849B212D87B30057520B /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		44AB849C212D87B30057520B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		44AB849F212D882C0057520B /* BaseFileNamesFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseFileNamesFormatter.swift; sourceTree = "<group>"; };
+		44AB84A1212D88520057520B /* MultiBundleFileNamesFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiBundleFileNamesFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,7 +57,10 @@
 			isa = PBXGroup;
 			children = (
 				3F7B8C581F5D7FE8009BF2D3 /* ImageParser */,
+				448FCE80212D717D008D1D23 /* Frameworks */,
 				3F7B8C571F5D7FE8009BF2D3 /* Products */,
+				44AB849B212D87B30057520B /* LICENSE */,
+				44AB849C212D87B30057520B /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +75,60 @@
 		3F7B8C581F5D7FE8009BF2D3 /* ImageParser */ = {
 			isa = PBXGroup;
 			children = (
+				448FCE8C212D7875008D1D23 /* Workers */,
+				448FCE8B212D786B008D1D23 /* Views */,
+				448FCE88212D773E008D1D23 /* Models */,
 				3F7B8C591F5D7FE8009BF2D3 /* AppDelegate.swift */,
-				3F7B8C5B1F5D7FE8009BF2D3 /* ImageParserViewController.swift */,
-				3F7B8C681F5D885F009BF2D3 /* Files.swift */,
-				3F7B8C5D1F5D7FE8009BF2D3 /* Assets.xcassets */,
-				3F7B8C5F1F5D7FE8009BF2D3 /* Main.storyboard */,
-				3F7B8C621F5D7FE8009BF2D3 /* Info.plist */,
+				448FCE87212D76C8008D1D23 /* Resources */,
 			);
 			path = ImageParser;
+			sourceTree = "<group>";
+		};
+		448FCE80212D717D008D1D23 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F7B8C681F5D885F009BF2D3 /* Files.swift */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		448FCE87212D76C8008D1D23 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3F7B8C621F5D7FE8009BF2D3 /* Info.plist */,
+				3F7B8C5D1F5D7FE8009BF2D3 /* Assets.xcassets */,
+				448FCE85212D768E008D1D23 /* AppTexts.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		448FCE88212D773E008D1D23 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				448FCE89212D774A008D1D23 /* ParsingStatus.swift */,
+				44AB8499212D85590057520B /* BundleMode.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		448FCE8B212D786B008D1D23 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3F7B8C5F1F5D7FE8009BF2D3 /* Main.storyboard */,
+				3F7B8C5B1F5D7FE8009BF2D3 /* ImageParserViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		448FCE8C212D7875008D1D23 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				448FCE81212D7207008D1D23 /* FilesWorker.swift */,
+				448FCE83212D74AF008D1D23 /* FileNamesFormatter.swift */,
+				44AB849F212D882C0057520B /* BaseFileNamesFormatter.swift */,
+				44AB84A1212D88520057520B /* MultiBundleFileNamesFormatter.swift */,
+			);
+			path = Workers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,7 +191,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44AB849D212D87B30057520B /* LICENSE in Resources */,
 				3F7B8C5E1F5D7FE8009BF2D3 /* Assets.xcassets in Resources */,
+				44AB849E212D87B30057520B /* README.md in Resources */,
 				3F7B8C611F5D7FE8009BF2D3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,7 +205,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				448FCE84212D74AF008D1D23 /* FileNamesFormatter.swift in Sources */,
 				3F7B8C5C1F5D7FE8009BF2D3 /* ImageParserViewController.swift in Sources */,
+				44AB849A212D85590057520B /* BundleMode.swift in Sources */,
+				44AB84A2212D88520057520B /* MultiBundleFileNamesFormatter.swift in Sources */,
+				44AB84A0212D882C0057520B /* BaseFileNamesFormatter.swift in Sources */,
+				448FCE86212D768E008D1D23 /* AppTexts.swift in Sources */,
+				448FCE82212D7207008D1D23 /* FilesWorker.swift in Sources */,
+				448FCE8A212D774A008D1D23 /* ParsingStatus.swift in Sources */,
 				3F7B8C5A1F5D7FE8009BF2D3 /* AppDelegate.swift in Sources */,
 				3F7B8C691F5D885F009BF2D3 /* Files.swift in Sources */,
 			);
@@ -269,7 +345,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = ImageParser/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ImageParser/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dyrkabes.SignFlipper.ImageParser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -283,7 +359,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = ImageParser/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ImageParser/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dyrkabes.SignFlipper.ImageParser;
 				PRODUCT_NAME = "$(TARGET_NAME)";

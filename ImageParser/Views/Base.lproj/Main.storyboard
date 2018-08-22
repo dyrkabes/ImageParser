@@ -4,6 +4,7 @@
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -686,14 +687,14 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ImageParserViewController" customModule="ImageParser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="289"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="347"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="JOn-C2-xMz">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="289"/>
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="347"/>
                                 <subviews>
                                     <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAu-Hd-NMH">
-                                        <rect key="frame" x="22" y="103" width="436" height="170"/>
+                                        <rect key="frame" x="22" y="161" width="436" height="170"/>
                                         <clipView key="contentView" id="jKD-d3-t3z">
                                             <rect key="frame" x="1" y="1" width="419" height="168"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -756,24 +757,79 @@
                                             <action selector="buttonTapped:" target="XfG-lQ-9wD" id="p9V-LM-iZh"/>
                                         </connections>
                                     </button>
+                                    <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E9b-hc-ZR6">
+                                        <rect key="frame" x="23" y="136" width="33" height="17"/>
+                                        <subviews>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="u3r-at-hqT">
+                                                <rect key="frame" x="-2" y="0.0" width="37" height="17"/>
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="jxz-VK-Fkz">
+                                                    <font key="font" metaFont="system"/>
+                                                    <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                        </subviews>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bhN-KA-d8R">
+                                        <rect key="frame" x="21" y="111" width="88" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Bundle mode:" id="kH3-pG-d8e">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button verticalHuggingPriority="750" tag="10002" translatesAutoresizingMaskIntoConstraints="NO" id="Uai-n8-QXK">
+                                        <rect key="frame" x="236" y="110" width="123" height="18"/>
+                                        <buttonCell key="cell" type="radio" title="Multiple Bundles" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="Bnm-d0-zNd">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="radioButtonTapped:" target="XfG-lQ-9wD" id="luy-Fi-nN7"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" tag="10001" translatesAutoresizingMaskIntoConstraints="NO" id="eTJ-nD-Ggc">
+                                        <rect key="frame" x="126" y="110" width="93" height="18"/>
+                                        <buttonCell key="cell" type="radio" title="One Bundle" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="Aog-To-cQ7">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="radioButtonTapped:" target="XfG-lQ-9wD" id="Q85-ei-4ei"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="bhN-KA-d8R" firstAttribute="leading" secondItem="mA5-gt-Rqt" secondAttribute="leading" id="42a-FO-e8a"/>
                                     <constraint firstItem="4KY-HR-fRM" firstAttribute="leading" secondItem="qAu-Hd-NMH" secondAttribute="leading" id="4AK-pI-ZnJ"/>
-                                    <constraint firstItem="4KY-HR-fRM" firstAttribute="top" secondItem="qAu-Hd-NMH" secondAttribute="bottom" constant="16" id="Csb-Rh-juG"/>
+                                    <constraint firstItem="Uai-n8-QXK" firstAttribute="leading" secondItem="eTJ-nD-Ggc" secondAttribute="trailing" constant="20" id="6YE-Lc-h4k"/>
                                     <constraint firstItem="dcE-I4-KWz" firstAttribute="leading" secondItem="4KY-HR-fRM" secondAttribute="leading" id="LAG-N7-UhM"/>
                                     <constraint firstItem="sdV-JE-Nce" firstAttribute="centerY" secondItem="4KY-HR-fRM" secondAttribute="centerY" id="Qjg-Qo-hrJ"/>
                                     <constraint firstItem="dcE-I4-KWz" firstAttribute="trailing" secondItem="sdV-JE-Nce" secondAttribute="trailing" id="S1e-Ci-22N"/>
                                     <constraint firstItem="qAu-Hd-NMH" firstAttribute="top" secondItem="JOn-C2-xMz" secondAttribute="top" constant="16" id="Ubi-DP-OBz"/>
                                     <constraint firstItem="sdV-JE-Nce" firstAttribute="trailing" secondItem="qAu-Hd-NMH" secondAttribute="trailing" id="UeG-sM-lgM"/>
+                                    <constraint firstItem="E9b-hc-ZR6" firstAttribute="top" secondItem="qAu-Hd-NMH" secondAttribute="bottom" constant="8" id="Wud-2z-909"/>
                                     <constraint firstAttribute="trailing" secondItem="qAu-Hd-NMH" secondAttribute="trailing" constant="22" id="bm0-MI-Y0y"/>
                                     <constraint firstItem="qAu-Hd-NMH" firstAttribute="leading" secondItem="JOn-C2-xMz" secondAttribute="leading" constant="22" id="e3C-CP-KQJ"/>
+                                    <constraint firstItem="bhN-KA-d8R" firstAttribute="top" secondItem="E9b-hc-ZR6" secondAttribute="bottom" constant="8" id="eEt-lH-pZZ"/>
+                                    <constraint firstItem="eTJ-nD-Ggc" firstAttribute="centerY" secondItem="bhN-KA-d8R" secondAttribute="centerY" id="hUF-6q-QrW"/>
+                                    <constraint firstItem="eTJ-nD-Ggc" firstAttribute="leading" secondItem="bhN-KA-d8R" secondAttribute="trailing" constant="20" id="i8g-TK-eae"/>
                                     <constraint firstItem="dcE-I4-KWz" firstAttribute="top" secondItem="sdV-JE-Nce" secondAttribute="bottom" constant="15" id="ma0-A8-8sr"/>
+                                    <constraint firstItem="E9b-hc-ZR6" firstAttribute="leading" secondItem="mA5-gt-Rqt" secondAttribute="leading" id="mqk-Jc-zNk"/>
+                                    <constraint firstItem="4KY-HR-fRM" firstAttribute="top" secondItem="bhN-KA-d8R" secondAttribute="bottom" constant="24" id="qjA-V7-i4V"/>
+                                    <constraint firstItem="Uai-n8-QXK" firstAttribute="centerY" secondItem="bhN-KA-d8R" secondAttribute="centerY" id="tZl-EB-BTb"/>
                                     <constraint firstItem="sdV-JE-Nce" firstAttribute="leading" secondItem="4KY-HR-fRM" secondAttribute="trailing" constant="10" id="yLF-zR-65A"/>
                                     <constraint firstAttribute="bottom" secondItem="dcE-I4-KWz" secondAttribute="bottom" constant="20" id="zL1-Gk-0Nz"/>
                                 </constraints>
                             </customView>
                             <progressIndicator hidden="YES" wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="Ks5-Kx-0S3">
-                                <rect key="frame" x="224" y="172" width="32" height="32"/>
+                                <rect key="frame" x="224" y="230" width="32" height="32"/>
                             </progressIndicator>
                         </subviews>
                         <constraints>
@@ -789,11 +845,12 @@
                         <outlet property="activityIndicator" destination="Ks5-Kx-0S3" id="egR-gF-3th"/>
                         <outlet property="inputTextField" destination="sdV-JE-Nce" id="DEt-yP-N3n"/>
                         <outlet property="outputTextView" destination="mA5-gt-Rqt" id="1h1-gb-mkQ"/>
+                        <outlet property="statusLabel" destination="u3r-at-hqT" id="icr-ZQ-14a"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="75" y="675.5"/>
         </scene>
     </scenes>
 </document>
